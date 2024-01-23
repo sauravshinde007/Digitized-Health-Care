@@ -1,0 +1,24 @@
+1.Microsoft Health Vault
+
+Microsoft HealthVault was a web-based system for recording, storing, 
+and maintaining digitised health information. Healthcare professionals
+and individuals could both use the service. 
+
+HealthVault was set up to let users collect their own personal healthcare information
+
+Who Could Use HealthVault?
+
+HealthVault was designed for individuals and healthcare professionals. 
+As well as being able to access their own health records, parents could also manage their child’s records.
+
+
+What Went Wrong With HealthVault?
+
+As smartphones and wearable devices grew in popularity, HealthVault remained a largely browser-based experience without a mobile app. 
+With no app,HealthVault missed the opportunity to gather telemetry data, information on health habits, and other user-generated input. 
+
+Medical data in this format has limited use. These records were helpful for making insurance claims and for organisations processing 
+healthcare billing but largely missed opportunities to add meaningful value in driving change in users’ health and wellbeing. 
+
+
+
