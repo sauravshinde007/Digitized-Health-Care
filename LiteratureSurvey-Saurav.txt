@@ -21,4 +21,51 @@ Medical data in this format has limited use. These records were helpful for maki
 healthcare billing but largely missed opportunities to add meaningful value in driving change in users’ health and wellbeing. 
 
 
+2.Google Health
 
+Record Storage: Track and store medical records like diagnoses, medications, allergies, and lab results from connected healthcare providers or manually entered data.
+
+Data Tracking: Integrate data from fitness trackers, wearables, and various health apps to monitor sleep, activity levels, vital signs, and other health metrics.
+
+Information Access: Search for health information and connect to credible resources on conditions, medications, and overall well-being.
+
+Care Connect: Share records with healthcare providers with their consent, facilitating smoother doctor visits and better care coordination.
+
+Research Participation: Opt-in to participate in relevant health research studies through secure data sharing partnerships.
+
+Skin Concerns: Identify and learn about potential skin conditions using photos and AI-powered analysis.
+
+Well-being Resources: Find motivational tools, mental health resources, and personalized support for improving overall well-being.
+
+Limitations:
+
+Limited Healthcare Partner Integrations: Many healthcare providers and medical systems still haven't adopted Google Health, leading to incomplete medical records and hindering seamless data flow.
+
+Manual Data Entry: Patients often need to manually input data from non-integrated sources, which can be cumbersome and prone to errors.
+
+Standardized Data Formats: Lack of consistent data formats across healthcare systems complicates data interoperability and aggregation within Google Health
+
+3.MyChart
+
+What You Can Do With MyChart
+
+Friends and Family Access
+Take care of your children and other family members all from one account. Ask your healthcare provider to connect your account or invite someone yourself.
+
+Health and Visit Summaries
+View, download, or send a copy of specific visit summaries or your entire health record.
+
+Request My Record
+Request a copy of your medical record or other documents and download it when it is available.
+
+Who's Accessed My Record?
+See which other family members and care providers have accessed your medical record.
+
+Link Health Accounts
+With Happy Together, see information from healthcare organizations at which you've received care, all in a single view, including allergies, medications, health issues, visits, test results, and care team members.
+
+Share My Record
+With Share Everywhere, give any provider with a computer and internet temporary, one-time access to your medical record.
+
+Care Everywhere Authorization
+Give authorization for your healthcare providers to use Care Everywhere to share your medical record with other healthcare organizations when it's needed for your care.
