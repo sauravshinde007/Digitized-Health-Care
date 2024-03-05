@@ -1,0 +1,350 @@
+{% extends "layouts/base.html" %} {% block title %} User Profile {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+<div class="content">
+    <form action="/addDetails/" method="post"> {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="title">Add Patient Details</h5>
+                    </div>
+                    <div class="card-body">
+    
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Patients Username</label>
+                                    <input type="text" class="form-control" placeholder="Patient Username" value="" name="uname"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" placeholder="First Name" value="" name="fname" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Last Name" value="" name="lname"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date" class="form-control" value="" name="dob"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label for="Type" class="col-form-label">Gender</label>
+                                    <select name="gender" id="" class="form-control" required>
+                                        <option>select</option>
+                                        <option value="Male" style="color: black;" {%if data.gender == "male"%} selected{%endif%}>1. Male</option>
+                                        <option value="Female" style="color: black;"{%if data.gender == "female"%} selected{%endif%}>2. Female</option>
+                                        <option value="" style="color: black;"{%if data.gender == "other"%} selected{%endif%}>3. Other</option>
+    
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" placeholder="pratham@gmail.com" name="email"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="title">Doctor Information</h5>
+                    </div>
+    
+                    <div class="card-body">
+    
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Hospital(Branch)</label>
+                                    <input type="text" class="form-control" placeholder="Hospital Name" value="" name="hospital" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Doctor's Name</label>
+                                    <input type="text" class="form-control" placeholder="Doctor's Name" value="" name="dname"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Doctor's Degree</label>
+                                    <input type="text" class="form-control" placeholder="Doctor's Degree" value="" name="dd" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Hospital affiliation </label>
+                                    <input type="text" class="form-control" placeholder="Hospital affiliation" value="" name="df"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label for="prescriptionDate">Prescription Date</label>
+                                    <input type="date" class="form-control" id="prescriptionDate" name="PrescriptionD" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label for="prescriptionDuration">Duration of Prescription</label>
+                                    <select id="prescriptionDuration" class="form-control" name="PrescriptionDur">
+                                        <option value="15 days" style="color: black;"{%if data.gender == "15 days"%} selected{%endif%}>15 Days</option>
+                                        <option value="30 days" style="color: black;"{%if data.gender == "30 days"%} selected{%endif%}>1 Month</option>
+                                        <option value="60 days" style="color: black;" {%if data.gender == "60 days"%} selected{%endif%}>2 Months</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label for="expirationDate">Expiration Date</label>
+                                    <input type="date" class="form-control" id="expirationDate" readonly name="exdate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card template-card">
+                        <div class="card-header">
+                            <h5 class="title">Dosage Instructions</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Names of prescribed Medicine</label>
+                                        <input type="text" class="form-control" placeholder="Medicine Name" value="" name="mname"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Dosage strength</label>
+                                        <input type="text" class="form-control" placeholder="Dosage strength" value="" name="strength"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>instruction</label>
+                                        <textarea rows="4" cols="80" class="form-control"
+                                            placeholder="Any specific instructions or notes from the doctor"
+                                            value="Pre-filled Instructions 1" name="instruction"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-card-container">
+                                <button class="btn btn-sm btn-outline-primary add-card-btn"><i class="fas fa-plus"></i> Add
+                                    another dosage</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+    
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="title">Patient Admission Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label for="prescriptionDuration">Admitted ?</label>
+                                    <select id="admissionStatus" class="form-control" required name="admit">
+                                        <option value="outpatient"{%if data.gender == "outpatient"%} selected{%endif%}>Outpatient</option>
+                                        <option value="inpatient" {%if data.gender == "inpatient"%} selected{%endif%}>Inpatient</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div id="admission-details" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="admissionDate">Date of Admission</label>
+                                        <input type="date" class="form-control" id="admissionDate" placeholder="YYYY-MM-DD" name="admitdate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="dischargeDate">Date of Discharge (estimated):</label>
+                                        <input type="date" class="form-control" id="dischargeDate" placeholder="YYYY-MM-DD" name="dischargeDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Note about admission</label>
+                                        <textarea rows="4" cols="80" class="form-control"
+                                            placeholder="Any specific instructions or notes from the doctor"
+                                            value="Pre-filled Instructions 1" name="instruction1"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="title">Patient Operation Details</h5>
+                    </div>
+    
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label for="operationStatus">Operation Performed?</label>
+                                    <select id="operationStatus" class="form-control" required name="operation">
+                                        <option value="notPerformed"{%if data.gender == "Not Performerd"%} selected{%endif%}>Not Performed</option>
+                                        <option value="performed" {%if data.gender == "Performed"%} selected{%endif%}>Performed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div id="operation-details" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="operationDate">Date of Operation</label>
+                                        <input type="date" class="form-control" id="operationDate" placeholder="YYYY-MM-DD" name="operationDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="surgeon">Surgeon</label>
+                                        <input type="text" class="form-control" id="surgeon" placeholder="Surgeon Name" name="surgeon">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="operationDetails">Operation Details</label>
+                                        <textarea rows="4" cols="80" class="form-control" id="operationDetails"
+                                            placeholder="Details of the operation performed" name="operationDetails"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                  </div>
+            </div>
+    
+    </form>
+    
+        <script>
+
+            const addCardButton = document.querySelector('.add-card-btn');
+            const cardContainer = document.querySelector('.card-container');
+
+            addCardButton.addEventListener('click', () => {
+                // Clone the template card element
+                const newCard = document.querySelector('.template-card').cloneNode(true);
+
+                // Remove the class "template-card" as it's not needed anymore
+                newCard.classList.remove('template-card');
+
+                // Clear the input values in the new card (optional)
+                // newCard.querySelectorAll('input, textarea').forEach(element => element.value = '');
+
+                // Append the new card to the container
+                cardContainer.appendChild(newCard);
+            });
+
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1; // January is 0!
+            let dd = today.getDate();
+
+            // Pad single-digit months and days with zeros
+            mm = mm.toString().length === 1 ? `0${mm}` : mm;
+            dd = dd.toString().length === 1 ? `0${dd}` : dd;
+
+            document.getElementById("prescriptionDate").value = `${yyyy}-${mm}-${dd}`;
+
+            // Add this script after the closing body tag (`</body>`)
+
+            const prescriptionDateInput = document.getElementById('prescriptionDate');
+            const prescriptionDurationSelect = document.getElementById('prescriptionDuration');
+            const expirationDateInput = document.getElementById('expirationDate');
+
+            function calculateExpirationDate() {
+                const selectedDate = new Date(prescriptionDateInput.value);
+                const selectedDuration = parseInt(prescriptionDurationSelect.value);
+
+                if (!selectedDate || !selectedDuration || isNaN(selectedDuration)) {
+                    expirationDateInput.value = ''; // Clear expiration date if invalid entries
+                    return;
+                }
+
+                const durationInDays = selectedDuration * (prescriptionDurationSelect.selectedIndex === 2 ? 30 : 1); // Handle month case appropriately
+                const expirationDate = new Date(selectedDate.getTime() + durationInDays * 24 * 60 * 60 * 1000);
+
+                expirationDateInput.value = expirationDate.toISOString().slice(0, 10); // Format as YYYY-MM-DD
+            }
+
+            // Call the function initially to set the expiration date based on any pre-filled values
+            calculateExpirationDate();
+
+            // Update the expiration date whenever either input changes
+            prescriptionDateInput.addEventListener('change', calculateExpirationDate);
+            prescriptionDurationSelect.addEventListener('change', calculateExpirationDate);
+
+            const admissionStatus = document.getElementById('admissionStatus');
+            const admissionDetails = document.getElementById('admission-details');
+
+            admissionStatus.addEventListener('change', (event) => {
+                if (event.target.value === 'inpatient') {
+                    admissionDetails.style.display = 'block';
+                } else {
+                    admissionDetails.style.display = 'none';
+                }
+            });
+
+
+            const operationStatus = document.getElementById('operationStatus');
+            const operationDetails = document.getElementById('operation-details');
+
+            operationStatus.addEventListener('change', (event) => {
+                if (event.target.value === 'performed') {
+                    operationDetails.style.display = 'block';
+                } else {
+                    operationDetails.style.display = 'none';
+                }
+            });
+
+        </script>
+        {% endblock content %} {% block javascripts %}{% endblock javascripts %}
